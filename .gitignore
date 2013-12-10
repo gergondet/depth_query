@@ -1,0 +1,5 @@
+*.swp
+bin
+build
+src/depth_query
+srv_gen
