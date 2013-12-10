@@ -1,0 +1,7 @@
+<launch>
+    <arg name="image" default="/camera/depth/image_raw" />
+    
+    <node pkg="depth_query" type="depth_query_node" name="depth_query_node" args="$(find depth_query)" output="screen">
+        <remap from="/depth_query_image" to="$(arg image)" />
+    </node>
+</launch>

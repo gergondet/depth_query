@@ -3,7 +3,7 @@
 DepthQuery::DepthQuery(ros::NodeHandle & nh)
 : nh_(nh), it_(nh_)
 {
-    img_sub_ = it_.subscribe("/camera/depth/image_raw", 1, &DepthQuery::imageCallback, this);
+    img_sub_ = it_.subscribe("/depth_query_image", 1, &DepthQuery::imageCallback, this);
     depthQuerySrv_ = nh.advertiseService("depth_query", &DepthQuery::depthQueryCallback, this);
 }
 
