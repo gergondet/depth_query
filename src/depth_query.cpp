@@ -10,7 +10,7 @@ DepthQuery::DepthQuery(ros::NodeHandle & nh)
 bool DepthQuery::depthQueryCallback(depth_query::DepthQueryService::Request & req,
                     depth_query::DepthQueryService::Response & res)
 {
-    if(req.x >= 0 && req.x < img_->height && req.y >= 0 && req.y < img_->width)
+    if(req.x >= 0 && req.x < img_->width && req.y >= 0 && req.y < img_->height)
     {
         res.z = img_->data[2*(req.x+req.y*img_->width)] + (img_->data[2*(req.x+req.y*img_->width)+1] << 8);
     }
