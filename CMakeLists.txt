@@ -21,6 +21,7 @@ catkin_package()
 
 add_executable(depth_query_node src/depth_query.cpp src/depth_query_node.cpp)
 target_link_libraries(depth_query_node ${catkin_LIBRARIES})
+add_dependencies(depth_query_node depth_query_generate_messages_cpp)
 
 install(TARGETS 
     depth_query_node
